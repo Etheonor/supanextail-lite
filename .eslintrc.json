@@ -1,0 +1,96 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "cypress/globals": true
+    },
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:sonarjs/recommended",
+        "plugin:unicorn/recommended"
+    ],
+    "parserOptions": {
+        "project": [
+            "./tsconfig.json"
+        ]
+    },
+    "parser": "@typescript-eslint/parser",
+    "ignorePatterns": [
+        "node_modules/*",
+        ".next/*",
+        ".out/*",
+        "!.prettierrc.js",
+        "types/*",
+        "next-env.d.ts"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "cypress",
+        "simple-import-sort",
+        "prettier",
+        "sonarjs"
+    ],
+    "rules": {
+        "no-console": "off",
+        "react/no-unescaped-entities": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "semi": true,
+                "trailingComma": "es5",
+                "singleQuote": true,
+                "tabWidth": 2,
+                "useTabs": false,
+                "endOfLine": "auto",
+                "printWidth": 80,
+                "bracketSameLine": true,
+                "bracketSpacing": true
+            }
+        ],
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            2,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+            "warn",
+            {
+                "allowExpressions": true,
+                "allowTypedFunctionExpressions": true,
+                "allowHigherOrderFunctions": true,
+                "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+            }
+        ],
+        "unicorn/no-null": "off",
+        "unicorn/filename-case": [
+            "error",
+            {
+                "cases": {
+                    "camelCase": true,
+                    "pascalCase": true,
+                    "kebabCase": true
+                }
+            }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": [
+                    "."
+                ]
+            }
+        }
+    }
+}
